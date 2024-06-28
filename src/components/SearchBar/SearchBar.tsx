@@ -1,6 +1,9 @@
+//import React, { FormEvent } from 'react'; //бо onSubmit і preventDefault
 import css from './SearchBar.module.css'
 import { toast } from 'react-hot-toast';
 
+
+//=============Оригінал=====================================
 export const SearchBar = ({ onSearch }) => {
   
 	const handleSubmit = (event) => {
