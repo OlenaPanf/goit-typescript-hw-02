@@ -1,4 +1,3 @@
-import './App.css'
 import { useEffect, useState } from "react";
 import { fetchImagesWithParams } from "../../images-api";
 import ImageGallery from '../ImageGallery/ImageGallery'
@@ -8,16 +7,29 @@ import { SearchBar } from "../SearchBar/SearchBar";
 import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn'
 import ImageModal from '../ImageModal/ImageModal';
 import { Toaster } from 'react-hot-toast';
+import './App.css'
+
+interface Image {
+  id: string;
+  urls: {
+    small: string;
+    regular: string;
+  };
+  likes: number;
+  user: {
+    name: string;
+  };
+}
 
 export default function App() {
   
-  const [cards, setCards] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false); 
-  const [page, setPage] = useState(1);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [totalPages, setTotalPages] = useState(0);
-  const [selectedCard, setSelectedCard] = useState(null);
+  const [cards, setCards] = useState<Image[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(1);
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [totalPages, setTotalPages] = useState<number>(0);
+  const [selectedCard, setSelectedCard] = useState<Image | null>(null);
   
   useEffect(() => {
     if (searchQuery.trim() === "") {
@@ -42,7 +54,7 @@ export default function App() {
     fetchImages();
   }, [page, searchQuery]);
 
-  const handleSearch = async (keyword) => {
+  const handleSearch = async (keyword: string) => {
     setSearchQuery(keyword);
     setPage(1);
     setCards([]);
@@ -54,9 +66,9 @@ export default function App() {
     }
   };
 
-  const handleCardClick = (id) => {
+  const handleCardClick = (id: string) => {
     const card = cards.find(card => card.id === id);
-    setSelectedCard(card);
+    setSelectedCard(card || null);
   };
 
   const handleCloseModal = () => {
@@ -87,3 +99,11 @@ export default function App() {
 }
 
 
+//=================Оригінал=========
+  // const [cards, setCards] = useState([]);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(false); 
+  // const [page, setPage] = useState(1);
+  // const [searchQuery, setSearchQuery] = useState("");
+  // const [totalPages, setTotalPages] = useState(0);
+  // const [selectedCard, setSelectedCard] = useState(null);

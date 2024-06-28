@@ -17,7 +17,7 @@ interface Image {
 
 interface FetchImagesResponse {
   results: Image[]; //масив карток
-  total_pages: number;
+  totalPages: number;
 }
 
 export const fetchImagesWithParams = async (
@@ -34,7 +34,7 @@ export const fetchImagesWithParams = async (
   const response = await axios.get('/search/photos', { params });
   return {
     results: response.data.results,
-    total_pages: response.data.total_pages,
+    totalPages: response.data.total_pages,
   };
 };
 
