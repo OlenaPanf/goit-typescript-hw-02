@@ -1,0 +1,10 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 16px;
+  color: red;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.2;
+}
