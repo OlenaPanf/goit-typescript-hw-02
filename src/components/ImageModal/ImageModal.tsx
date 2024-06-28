@@ -28,3 +28,5 @@ export default function ImageModal({ isOpen, likes, user: { name }, urls: { regu
     </ReactModal>
   );
 }
+
+
