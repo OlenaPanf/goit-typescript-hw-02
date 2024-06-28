@@ -16,7 +16,7 @@ interface Image {
 }
 
 interface FetchImagesResponse {
-  results: Image[]; //массив карточек
+  results: Image[]; //масив карток
   total_pages: number;
 }
 
@@ -38,7 +38,7 @@ export const fetchImagesWithParams = async (
   };
 };
 
-//=============Оригинал=====================================
+//=============Оригінал=====================================
 // export const fetchImagesWithParams = async (keyword, currentPage) => {
 //   const params = {
 //     client_id: accessKey,
