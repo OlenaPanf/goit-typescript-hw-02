@@ -9,3 +9,8 @@ export interface Image {
     name: string;
   };
 }
+
+export interface FetchImagesResponse {
+  results: Image[];
+  totalPages: number;
+}

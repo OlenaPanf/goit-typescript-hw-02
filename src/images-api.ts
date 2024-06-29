@@ -1,24 +1,8 @@
 import axios from 'axios';
+import { FetchImagesResponse } from './components/App/App.types';
 
 const accessKey = '-uXzliBzIogoqpuSHMdyPNxEMBdCU-RPnBNhpop5aZo';
 axios.defaults.baseURL = 'https://api.unsplash.com';
-
-interface Image {
-  id: string;
-  urls: {
-    small: string; //карточка
-    regular: string; //модалка
-  };
-  likes: number; //модалка
-  user: {
-    name: string;
-  };
-}
-
-interface FetchImagesResponse {
-  results: Image[]; //масив карток
-  totalPages: number;
-}
 
 export const fetchImagesWithParams = async (
   keyword: string,

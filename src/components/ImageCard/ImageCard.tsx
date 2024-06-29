@@ -1,12 +1,8 @@
 import css from './ImageCard.module.css';
+import { Image } from '../App/App.types';
 
 interface ImageCardProps {
-  card: {
-    id: string;
-    urls: {
-      small: string;
-    };
-  };
+  card: Image;
   onClick: (id: string) => void; //бо функція
 }
 

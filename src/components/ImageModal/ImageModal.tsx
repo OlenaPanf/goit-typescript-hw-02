@@ -1,15 +1,12 @@
 import ReactModal from 'react-modal';
 import css from './ImageModal.module.css'
+import { Image } from '../App/App.types';
 
 interface ImageModalProps {
   isOpen: boolean;
-  likes: number;
-  user: {
-    name: string;
-  };
-  urls: {
-    regular: string;
-  };
+  likes: Image['likes'];
+  user: Image['user'];
+  urls: Image['urls'];
   onClose: () => void; //бо функція
 }
 

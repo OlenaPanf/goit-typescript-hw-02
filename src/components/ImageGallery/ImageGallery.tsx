@@ -1,12 +1,6 @@
 import css from './ImageGallery.module.css'
 import ImageCard from "../ImageCard/ImageCard"
-
-interface Image {
-  id: string;
-  urls: {
-    small: string;
-  };
-}
+import { Image } from '../App/App.types';
 
 interface ImageGalleryProps {
   cards: Image[]; //масив карток

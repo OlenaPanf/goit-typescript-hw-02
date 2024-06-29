@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchImagesWithParams } from "../../images-api";
+import { Image } from './App.types';
 import ImageGallery from '../ImageGallery/ImageGallery'
 import Loader from '../Loader/Loader'
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
@@ -8,18 +9,6 @@ import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn'
 import ImageModal from '../ImageModal/ImageModal';
 import { Toaster } from 'react-hot-toast';
 import './App.css'
-
-interface Image {
-  id: string;
-  urls: {
-    small: string;
-    regular: string;
-  };
-  likes: number;
-  user: {
-    name: string;
-  };
-}
 
 export default function App() {
   
